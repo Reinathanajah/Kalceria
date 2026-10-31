@@ -237,7 +237,7 @@ export function StartupSequenceOverlay({ showStartup, startupProgress, particles
                     >
                       {/* Character Sprite - Equal sizing with portal */}
                       <ContentImage
-                        src="/kalcermanmap.png"
+                        src="/kalcermanmap.webp"
                         alt="Kalcerman Map"
                         width={2048}
                         height={2048}

@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import IntroPreloader from "@/components/IntroPreloader";
+import LandingPage from "@/components/LandingPage";
 
-const LandingPage = dynamic(() => import("@/components/LandingPage"), { ssr: false });
 const AuthPage = dynamic(() => import("@/components/AuthPage"), { ssr: false });
 const WelcomeTransition = dynamic(() => import("@/components/WelcomeTransition"), { ssr: false });
 

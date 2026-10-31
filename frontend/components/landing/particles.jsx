@@ -25,23 +25,22 @@ export function GoldenDust() {
   return (
     <div className="absolute inset-0 z-0 pointer-events-none overflow-visible mix-blend-screen">
       {particles.map((p, i) => (
-        <motion.div
+        <div
           key={i}
-          initial={{ opacity: 0, y: 0 }}
-          animate={{ 
-            opacity: [0, 1, 0], 
-            y: [0, -15, 0]
+          className="absolute w-1.5 h-1.5 bg-yellow-400 rounded-full shadow-[0_0_8px_rgba(250,204,21,0.8)] will-change-transform"
+          style={{
+            left: `${p.x}%`,
+            top: `${p.y}%`,
+            animation: `goldenDustAnim ${p.duration}s ease-in-out ${p.delay}s infinite`,
           }}
-          transition={{
-            repeat: Infinity,
-            duration: p.duration,
-            delay: p.delay,
-            ease: "easeInOut"
-          }}
-          className="absolute w-1.5 h-1.5 bg-yellow-400 rounded-full shadow-[0_0_8px_rgba(250,204,21,0.8)]"
-          style={{ left: `${p.x}%`, top: `${p.y}%` }}
         />
       ))}
+      <style jsx>{`
+        @keyframes goldenDustAnim {
+          0%, 100% { opacity: 0; transform: translateY(0); }
+          50% { opacity: 1; transform: translateY(-15px); }
+        }
+      `}</style>
     </div>
   );
 }
@@ -72,27 +71,22 @@ export function StarDust() {
   return (
     <div className="absolute inset-[-10%] z-0 pointer-events-none overflow-visible mix-blend-screen">
       {particles.map((p, i) => (
-        <motion.div
+        <div
           key={i}
-          initial={{ opacity: 0, y: 0, scale: 0.5 }}
-          animate={{ 
-            opacity: [0, 1, 0], 
-            y: [0, -20, 0],
-            scale: [0.5, 1, 0.5]
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: p.duration,
-            delay: p.delay,
-            ease: "easeInOut"
-          }}
-          className={`absolute w-1 h-1 rounded-full ${p.bgColor}`}
+          className={`absolute w-1 h-1 rounded-full ${p.bgColor} will-change-transform`}
           style={{ 
             left: `${p.x}%`, top: `${p.y}%`,
-            filter: `drop-shadow(0 0 4px ${p.shadowColor})`
+            filter: `drop-shadow(0 0 4px ${p.shadowColor})`,
+            animation: `starDustAnim ${p.duration}s ease-in-out ${p.delay}s infinite`,
           }}
         />
       ))}
+      <style jsx>{`
+        @keyframes starDustAnim {
+          0%, 100% { opacity: 0; transform: translateY(0) scale(0.5); }
+          50% { opacity: 1; transform: translateY(-20px) scale(1); }
+        }
+      `}</style>
     </div>
   );
 }
@@ -166,9 +160,9 @@ export function TropicalParticles() {
   return (
     <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
       {particles.map((p) => (
-        <motion.div
+        <div
           key={p.id}
-          className="absolute rounded-full"
+          className="absolute rounded-full will-change-transform"
           style={{
             width: p.size,
             height: p.size,
@@ -176,20 +170,28 @@ export function TropicalParticles() {
             bottom: p.bottom,
             backgroundColor: p.color,
             boxShadow: `0 0 10px ${p.color}88`,
-          }}
-          animate={{
-            x: [0, p.xDrift, 0],
-            y: [0, p.yRise],
-            opacity: [0, 0.75, 0],
-          }}
-          transition={{
-            duration: p.duration,
-            repeat: Infinity,
-            ease: "easeOut",
-            delay: p.delay,
+            "--xDrift": `${p.xDrift}px`,
+            "--yRise": `${p.yRise}px`,
+            animation: `tropicalAnim ${p.duration}s ease-out ${p.delay}s infinite`,
           }}
         />
       ))}
+      <style jsx>{`
+        @keyframes tropicalAnim {
+          0% {
+            opacity: 0;
+            transform: translate3d(0, 0, 0);
+          }
+          50% {
+            opacity: 0.75;
+            transform: translate3d(var(--xDrift), calc(var(--yRise) * 0.5), 0);
+          }
+          100% {
+            opacity: 0;
+            transform: translate3d(0, var(--yRise), 0);
+          }
+        }
+      `}</style>
     </div>
   );
 }

@@ -10,7 +10,7 @@ function esc(value) {
 }
 
 function renderSingleMedia(url) {
-  const cleanUrl = url || "/media/gifs/hq_feed_1.gif";
+  const cleanUrl = url || "/media/gifs/hq_feed_1.mp4";
   const isVideo = /\.(mp4|webm|ogg)($|\?)/i.test(cleanUrl) || /^data:video/i.test(cleanUrl);
 
   if (isVideo) {
@@ -42,7 +42,7 @@ function renderMediaCarousel(mediaUrls) {
     : (mediaUrls ? [mediaUrls] : []);
 
   if (list.length === 0) {
-    return renderSingleMedia("/media/gifs/hq_feed_1.gif");
+    return renderSingleMedia("/media/gifs/hq_feed_1.mp4");
   }
   if (list.length === 1) {
     return renderSingleMedia(list[0]);
@@ -108,7 +108,7 @@ const HQ_PALETTE = {
 };
 
 export function hqPopup(hq) {
-  const mediaList = hq.mediaUrls || (hq.gifUrl ? [hq.gifUrl] : ["/media/gifs/hq_feed_1.gif"]);
+  const mediaList = hq.mediaUrls || (hq.gifUrl ? [hq.gifUrl] : ["/media/gifs/hq_feed_1.mp4"]);
 
   return `
     <div class="tactical-card hq-card" style="position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15) !important; border-radius: 18px !important; background: rgba(10, 15, 30, 0.45) !important; backdrop-filter: blur(20px) saturate(180%) !important; -webkit-backdrop-filter: blur(20px) saturate(180%) !important; box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5) !important;">

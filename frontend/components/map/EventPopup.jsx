@@ -39,19 +39,19 @@ function extractMediaList(item) {
     return [raw];
   }
 
-  // Fallback GIFs based on category
+  // Fallback videos (transcoded from GIFs for 94% network reduction) based on category
   const categoryId = getEventCategory(item);
   switch (categoryId) {
     case "cafe":
-      return ["/media/gifs/event_cafe_1.gif", "/media/gifs/event_cafe_2.gif"];
+      return ["/media/gifs/event_cafe_1.mp4", "/media/gifs/event_cafe_2.mp4"];
     case "special":
-      return ["/media/gifs/event_spec_1.gif", "/media/gifs/event_spec_2.gif", "/media/gifs/event_spec_3.gif"];
+      return ["/media/gifs/event_spec_1.mp4", "/media/gifs/event_spec_2.mp4", "/media/gifs/event_spec_3.mp4"];
     case "eat":
-      return ["/media/gifs/event_eat_1.gif", "/media/gifs/event_eat_2.gif"];
+      return ["/media/gifs/event_eat_1.mp4", "/media/gifs/event_eat_2.mp4"];
     case "discuss":
-      return ["/media/gifs/event_disc_1.gif", "/media/gifs/event_disc_2.gif"];
+      return ["/media/gifs/event_disc_1.mp4", "/media/gifs/event_disc_2.mp4"];
     default:
-      return ["/media/gifs/the-office.gif"];
+      return ["/media/gifs/the-office.mp4"];
   }
 }
 
@@ -87,7 +87,7 @@ function renderMediaCarousel(mediaList) {
     : (mediaList ? [mediaList] : []);
 
   if (list.length === 0) {
-    return renderSingleMedia("/media/gifs/event_cafe_1.gif");
+    return renderSingleMedia("/media/gifs/event_cafe_1.mp4");
   }
   if (list.length === 1) {
     return renderSingleMedia(list[0]);

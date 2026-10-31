@@ -48,13 +48,13 @@ const hqPoint = {
   description: "Place where people meet",
   lat: -6.2715,
   lng: 106.7135,
-  gifUrl: "/media/gifs/hq_feed_1.gif",
-  videoUrl: "/media/gifs/hq_feed_1.gif",
+  gifUrl: "/media/gifs/hq_feed_1.mp4",
+  videoUrl: "/media/gifs/hq_feed_1.mp4",
   mediaUrls: [
-    "/media/gifs/hq_feed_1.gif",
-    "/media/gifs/hq_feed_2.gif",
-    "/media/gifs/hq_feed_3.gif",
-    "/media/gifs/hq_feed_4.gif",
+    "/media/gifs/hq_feed_1.mp4",
+    "/media/gifs/hq_feed_2.mp4",
+    "/media/gifs/hq_feed_3.mp4",
+    "/media/gifs/hq_feed_4.mp4",
   ],
 };
 
@@ -831,7 +831,7 @@ export default function MapPage() {
           className="fixed bottom-0 md:bottom-[4px] left-1/2 -translate-x-1/2 z-[20] pointer-events-none select-none flex flex-col items-center"
         >
           <Image
-            src="/kalcermap_bottom.png"
+            src="/kalcermap_bottom.webp"
             alt="Kalceria Maps"
             width={2048}
             height={2048}
@@ -847,14 +847,18 @@ export default function MapPage() {
       {/* Randomized Pirate Interception Overlay */}
       {showPirate && (
         <div className="fixed bottom-0 right-0 z-[900] w-[15vw] pointer-events-none animate-in fade-in slide-in-from-bottom-20 duration-1000">
-          <ContentImage
+          <video
             key={pirateKey}
-            src="/map/pirate_overview_looped.webp"
-            alt="Pirate Intel"
-            width={240}
-            height={426}
-            className="w-full h-auto opacity-80 mix-blend-screen"
-          />
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="w-full h-auto opacity-80 mix-blend-screen pointer-events-none"
+          >
+            <source src="/map/pirate_overview_looped.webm" type="video/webm" />
+            <source src="/map/pirate_overview_looped.mp4" type="video/mp4" />
+          </video>
         </div>
       )}
 

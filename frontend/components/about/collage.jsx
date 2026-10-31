@@ -80,9 +80,10 @@ export function VideoCell({ index = 0, initialSrc, allVids, active = true }) {
   }, [initialSrc]);
 
   useEffect(() => {
+    if (!active) return;
     const timer = setTimeout(() => setStreamReady(true), 450 + index * 180);
     return () => clearTimeout(timer);
-  }, [index]);
+  }, [active, index]);
 
   useEffect(() => {
     if (!randomRef.current) return;

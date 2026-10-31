@@ -219,7 +219,7 @@ export default function LandingPage({ onNavigateAuth }) {
 
         {/* Mobile-only Silhouette: grup_hp.webp (on top of background layer z-0 but behind crystal_2 z-10) */}
         <div className="absolute bottom-0 left-0 w-full h-[300px] pointer-events-none z-[1] overflow-hidden md:hidden flex justify-center items-end">
-          <Image src="/hp/grup_hp.webp" alt="Group Mobile" width={2304} height={1848} unoptimized loading="eager" decoding="auto" className="h-full w-auto object-contain opacity-35" />
+          <Image src="/hp/grup_hp.webp" alt="Group Mobile" width={2304} height={1848} loading="lazy" decoding="async" className="h-full w-auto object-contain opacity-35" />
         </div>
 
         {/* Header: Title above carousel for Mobile and iPad family; hidden on desktop widescreen */}
@@ -293,15 +293,15 @@ export default function LandingPage({ onNavigateAuth }) {
           
           {/* Crystal 3 Top Right (Truncated at Top) */}
           <div className="absolute top-[-20px] md:top-[-40px] right-12 md:right-40 hidden md:flex flex-col items-center pointer-events-none opacity-80">
-            <Image src="/crystal_3.webp" alt="Crystal 3" width={2480} height={1728} unoptimized loading="eager" decoding="auto" className="h-[75px] md:h-[120px] w-auto object-contain rotate-180" />
+            <Image src="/crystal_3.webp" alt="Crystal 3" width={2480} height={1728} loading="lazy" decoding="async" className="h-[75px] md:h-[120px] w-auto object-contain rotate-180" />
           </div>
 
           {/* Crystal 1 Bottom Left (Truncated at Bottom) */}
-          <Image src="/crystal_1.webp" alt="Crystal 1" width={2016} height={2120} unoptimized loading="eager" decoding="auto" className="absolute bottom-[-20px] md:bottom-[-30px] left-0 md:left-2 xl:left-4 h-[80px] md:h-[120px] xl:h-[130px] w-auto object-contain opacity-80 z-[15] hidden md:block" />
+          <Image src="/crystal_1.webp" alt="Crystal 1" width={2016} height={2120} loading="lazy" decoding="async" className="absolute bottom-[-20px] md:bottom-[-30px] left-0 md:left-2 xl:left-4 h-[80px] md:h-[120px] xl:h-[130px] w-auto object-contain opacity-80 z-[15] hidden md:block" />
 
           {/* Group Silhouette: Shifted flush to left edge for iPad Family to eliminate overlap with carousel and explore button */}
           <div className="absolute bottom-0 left-0 md:-left-16 lg:-left-12 xl:left-40 hidden md:flex items-end z-10">
-            <Image src="/grup.webp" alt="Group" width={2064} height={1655} unoptimized loading="eager" decoding="auto" className="relative z-10 h-[180px] md:h-[220px] lg:h-[250px] xl:h-[280px] w-auto object-contain translate-y-[2.5px] opacity-35" />
+            <Image src="/grup.webp" alt="Group" width={2064} height={1655} loading="lazy" decoding="async" className="relative z-10 h-[180px] md:h-[220px] lg:h-[250px] xl:h-[280px] w-auto object-contain translate-y-[2.5px] opacity-35" />
           </div>
 
           <div className="absolute bottom-0 right-4 md:right-2 lg:right-6 xl:right-10 opacity-50 hidden md:flex flex-col items-center pointer-events-none">
@@ -310,7 +310,7 @@ export default function LandingPage({ onNavigateAuth }) {
               className="absolute bottom-[-5px] right-[-20%] w-[150%] h-[75px] md:h-[80px] lg:h-[110px] xl:h-[140px] bg-gradient-to-r from-[#D946EF] to-[#FACC15] blur-[16px] md:blur-[18px] xl:blur-[22px] z-0 opacity-80"
               style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%, 0 100%)" }}
             />
-            <Image src="/brio_black.webp" alt="Brio" width={2226} height={1207} unoptimized loading="eager" decoding="auto" className="relative z-10 h-[120px] md:h-[125px] lg:h-[175px] xl:h-[240px] w-auto object-contain translate-y-[2.5px]" />
+            <Image src="/brio_black.webp" alt="Brio" width={2226} height={1207} loading="lazy" decoding="async" className="relative z-10 h-[120px] md:h-[125px] lg:h-[175px] xl:h-[240px] w-auto object-contain translate-y-[2.5px]" />
           </div>
         </div>
       </section>
@@ -319,7 +319,7 @@ export default function LandingPage({ onNavigateAuth }) {
       <section id="section-about" className="relative w-full h-[70vh] overflow-hidden bg-black flex items-center justify-center border-t border-slate-900 z-30">
         <AnimatePresence initial={false} custom={aboutIndex}>
           <motion.div key={aboutIndex} variants={slideVariants} initial="enter" animate="center" exit="exit" className="absolute inset-0 w-full h-full">
-            <Image src={currentAboutImage.src} alt="About Us BG" width={currentAboutImage.width} height={currentAboutImage.height} unoptimized loading="eager" decoding="auto" className="w-full h-full object-cover opacity-70 grayscale xl:grayscale-0" />
+            <Image src={currentAboutImage.src} alt="About Us BG" width={currentAboutImage.width} height={currentAboutImage.height} loading="lazy" decoding="async" className="w-full h-full object-cover opacity-70 grayscale xl:grayscale-0" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#050a14] via-[#050a14]/60 to-transparent z-[1]" />
             {/* Warm Peach & Gold & Magenta Master overlay on mobile & tablet */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#ffd700]/35 via-[#ffaa66]/30 to-[#ff00ff]/25 mix-blend-color xl:hidden z-[2]" />
@@ -364,16 +364,16 @@ export default function LandingPage({ onNavigateAuth }) {
             width={isMobileOrTablet ? 2048 : 2400}
             height={isMobileOrTablet ? 2048 : 1589}
             unoptimized
-            loading="eager"
-            decoding="auto"
+            loading="lazy"
+            decoding="async"
             className={`h-[192px] md:h-[540px] w-auto object-contain drop-shadow-[0_10px_70px_rgba(255,255,255,0.05)] ${isMobile ? "" : "rotate-180"}`}
           />
         </div>
 
         {/* Architectural Wall Backgrounds */}
         <div className="absolute inset-0 pointer-events-none z-[1] overflow-hidden">
-          <Image src="/wall_2.webp" alt="Wall 2" width={1888} height={2244} unoptimized loading="eager" decoding="auto" className="absolute bottom-0 right-0 h-[215px] md:h-[377px] w-auto object-contain opacity-90 brightness-110" />
-          <Image src="/wall_1.webp" alt="Wall 1" width={2400} height={1603} unoptimized loading="eager" decoding="auto" className="absolute bottom-0 left-[-2%] md:left-[9%] h-[175px] md:h-[304px] w-auto object-contain opacity-90 brightness-110" />
+          <Image src="/wall_2.webp" alt="Wall 2" width={1888} height={2244} loading="lazy" decoding="async" className="absolute bottom-0 right-0 h-[215px] md:h-[377px] w-auto object-contain opacity-90 brightness-110" />
+          <Image src="/wall_1.webp" alt="Wall 1" width={2400} height={1603} loading="lazy" decoding="async" className="absolute bottom-0 left-[-2%] md:left-[9%] h-[175px] md:h-[304px] w-auto object-contain opacity-90 brightness-110" />
         </div>
 
         <FloatingSpareParts />
@@ -411,23 +411,23 @@ export default function LandingPage({ onNavigateAuth }) {
         {/* Bush Footer Decoration (Colliding in Middle, Truncated at Border) */}
         <div className="absolute bottom-[-75px] md:bottom-[-125px] left-1/2 -translate-x-1/2 flex items-end justify-center pointer-events-none z-5 w-screen overflow-hidden opacity-90">
           <TropicalParticles />
-          <Image src="/bush_1.webp" alt="Bush 1" width={3178} height={1129} unoptimized loading="eager" decoding="auto" className="h-[180px] md:h-[320px] w-auto object-contain -mr-16 md:-mr-28 -translate-y-6 md:-translate-y-10" />
-          <Image src="/bush_2.webp" alt="Bush 2" width={3172} height={1139} unoptimized loading="eager" decoding="auto" className="h-[180px] md:h-[320px] w-auto object-contain -ml-16 md:-ml-28" />
+          <Image src="/bush_1.webp" alt="Bush 1" width={3178} height={1129} loading="lazy" decoding="async" className="h-[180px] md:h-[320px] w-auto object-contain -mr-16 md:-mr-28 -translate-y-6 md:-translate-y-10" />
+          <Image src="/bush_2.webp" alt="Bush 2" width={3172} height={1139} loading="lazy" decoding="async" className="h-[180px] md:h-[320px] w-auto object-contain -ml-16 md:-ml-28" />
         </div>
 
         {/* Marketplace Links */}
         <div className="relative z-20 flex gap-6 md:gap-16 items-center justify-center mb-24">
           <a href="#" className="flex flex-col items-center gap-4 group transition-transform hover:scale-105">
             <div className="relative w-32 md:w-64 h-[42px] md:h-[72px] block">
-              <Image src="/logo_tokpedgray.webp" alt="Tokopedia" width={992} height={1070} unoptimized loading="eager" decoding="auto" className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-100 group-hover:opacity-0" draggable={false} />
-              <Image src="/logo_tokped.webp" alt="Tokopedia Colored" width={1008} height={1049} unoptimized loading="eager" decoding="auto" className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 drop-shadow-[0_0_15px_rgba(3,172,14,0.6)]" draggable={false} />
+              <Image src="/logo_tokpedgray.webp" alt="Tokopedia" width={992} height={1070} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-100 group-hover:opacity-0" draggable={false} />
+              <Image src="/logo_tokped.webp" alt="Tokopedia Colored" width={1008} height={1049} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 drop-shadow-[0_0_15px_rgba(3,172,14,0.6)]" draggable={false} />
             </div>
             <span className="font-sans text-[12px] md:text-[17px] text-white font-semibold tracking-wide transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#FFD700] group-hover:to-[#FF00FF] text-center">Tokopedia - Kalceros</span>
           </a>
           <a href="#" className="flex flex-col items-center gap-4 group transition-transform hover:scale-105">
             <div className="relative w-32 md:w-64 h-[42px] md:h-[72px] block">
-              <Image src="/logo_shopeegray.webp" alt="Shopee" width={1008} height={1043} unoptimized loading="eager" decoding="auto" className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-100 group-hover:opacity-0" draggable={false} />
-              <Image src="/logo_shopee.webp" alt="Shopee Colored" width={1053} height={1024} unoptimized loading="eager" decoding="auto" className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 drop-shadow-[0_0_15px_rgba(238,77,45,0.6)]" draggable={false} />
+              <Image src="/logo_shopeegray.webp" alt="Shopee" width={1008} height={1043} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-100 group-hover:opacity-0" draggable={false} />
+              <Image src="/logo_shopee.webp" alt="Shopee Colored" width={1053} height={1024} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 drop-shadow-[0_0_15px_rgba(238,77,45,0.6)]" draggable={false} />
             </div>
             <span className="font-sans text-[12px] md:text-[17px] text-white font-semibold tracking-wide transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#FFD700] group-hover:to-[#FF00FF] text-center">Shopee - Kalcres</span>
           </a>
@@ -482,8 +482,8 @@ export default function LandingPage({ onNavigateAuth }) {
                       width={1077} 
                       height={976} 
                       unoptimized 
-                      loading="eager" 
-                      decoding="auto" 
+                      loading="lazy" 
+                      decoding="async" 
                       className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-100 group-hover:opacity-0 scale-[1.4]" 
                       draggable={false}
                     />
@@ -493,8 +493,8 @@ export default function LandingPage({ onNavigateAuth }) {
                       width={1077} 
                       height={976} 
                       unoptimized 
-                      loading="eager" 
-                      decoding="auto" 
+                      loading="lazy" 
+                      decoding="async" 
                       className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 drop-shadow-[0_0_15px_rgba(225,48,108,0.3)] scale-[1.4]" 
                       draggable={false}
                     />
@@ -518,8 +518,8 @@ export default function LandingPage({ onNavigateAuth }) {
                       width={944} 
                       height={1117} 
                       unoptimized 
-                      loading="eager" 
-                      decoding="auto" 
+                      loading="lazy" 
+                      decoding="async" 
                       className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-100 group-hover:opacity-0" 
                       draggable={false}
                     />
@@ -529,8 +529,8 @@ export default function LandingPage({ onNavigateAuth }) {
                       width={944} 
                       height={1117} 
                       unoptimized 
-                      loading="eager" 
-                      decoding="auto" 
+                      loading="lazy" 
+                      decoding="async" 
                       className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" 
                       draggable={false}
                     />
@@ -594,8 +594,8 @@ export default function LandingPage({ onNavigateAuth }) {
                   width={1077} 
                   height={976} 
                   unoptimized 
-                  loading="eager" 
-                  decoding="auto" 
+                  loading="lazy" 
+                  decoding="async" 
                   className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-100 group-hover:opacity-0 scale-[1.3]" 
                   draggable={false}
                 />
@@ -605,8 +605,8 @@ export default function LandingPage({ onNavigateAuth }) {
                   width={1077} 
                   height={976} 
                   unoptimized 
-                  loading="eager" 
-                  decoding="auto" 
+                  loading="lazy" 
+                  decoding="async" 
                   className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 drop-shadow-[0_0_15px_rgba(225,48,108,0.3)] scale-[1.3]" 
                   draggable={false}
                 />
@@ -630,8 +630,8 @@ export default function LandingPage({ onNavigateAuth }) {
                   width={944} 
                   height={1117} 
                   unoptimized 
-                  loading="eager" 
-                  decoding="auto" 
+                  loading="lazy" 
+                  decoding="async" 
                   className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-100 group-hover:opacity-0" 
                   draggable={false}
                 />
@@ -641,8 +641,8 @@ export default function LandingPage({ onNavigateAuth }) {
                   width={944} 
                   height={1117} 
                   unoptimized 
-                  loading="eager" 
-                  decoding="auto" 
+                  loading="lazy" 
+                  decoding="async" 
                   className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" 
                   draggable={false}
                 />
@@ -665,8 +665,8 @@ export default function LandingPage({ onNavigateAuth }) {
             width={1408}
             height={768}
             unoptimized
-            loading="eager"
-            decoding="auto"
+            loading="lazy"
+            decoding="async"
             className="absolute top-[-30%] left-1/2 -translate-x-[56%] w-[185%] h-auto z-30 drop-shadow-[0_15px_10px_rgba(0,0,0,0.5)]"
           />
           
@@ -676,8 +676,8 @@ export default function LandingPage({ onNavigateAuth }) {
             width={912}
             height={1181}
             unoptimized
-            loading="eager"
-            decoding="auto"
+            loading="lazy"
+            decoding="async"
             className="relative z-10 w-full h-auto object-contain drop-shadow-[0_0_20px_rgba(255,0,255,0.3)]"
           />
 
@@ -688,8 +688,8 @@ export default function LandingPage({ onNavigateAuth }) {
             width={771}
             height={681}
             unoptimized
-            loading="eager"
-            decoding="auto"
+            loading="lazy"
+            decoding="async"
             className="absolute bottom-1 right-1 w-6 md:w-8 h-auto z-50 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
           />
         </div>
@@ -846,8 +846,8 @@ export default function LandingPage({ onNavigateAuth }) {
               width={1210}
               height={864}
               unoptimized
-              loading="eager"
-              decoding="auto"
+              loading="lazy"
+              decoding="async"
               className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[196px] h-auto object-contain select-none translate-y-[2px]" 
               draggable={false}
             />
