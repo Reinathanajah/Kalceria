@@ -207,7 +207,7 @@ export default function LandingPage({ onNavigateAuth }) {
       </section>
 
       {/* ── Section 2: Events ── */}
-      <section id="section-events" className="relative w-full min-h-[70vh] flex flex-col xl:flex-row items-center justify-center xl:justify-between overflow-hidden bg-[#050a14] z-20 px-6 sm:px-8 xl:px-24 py-16 xl:py-20 gap-8 sm:gap-10 xl:gap-16">
+      <section id="section-events" className="relative w-full min-h-[70vh] flex flex-col xl:flex-row items-center justify-center xl:justify-between overflow-hidden bg-[#050a14] z-20 px-6 sm:px-8 xl:px-24 py-16 xl:py-20 gap-8 sm:gap-10 xl:gap-16" style={{ contentVisibility: "auto", containIntrinsicSize: "800px" }}>
         <StarDust />
         <div className="absolute inset-0 z-0 pointer-events-none opacity-80 mix-blend-screen">
           <motion.div animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.3, 0.15] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[10%] left-[20%] w-[40vw] h-[40vw] rounded-full blur-[100px] bg-[#FF00FF]" />
@@ -349,7 +349,7 @@ export default function LandingPage({ onNavigateAuth }) {
       </section>
 
       {/* ── Section 4: Merchandise / Support Us ── */}
-      <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-center py-20 z-40 border-t border-white/10 bg-transparent isolate overflow-hidden">
+      <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-center py-20 z-40 border-t border-white/10 bg-transparent isolate overflow-hidden" style={{ contentVisibility: "auto", containIntrinsicSize: "900px" }}>
         {/* Golden Glow Border Aura - Aggressive */}
         <div className="absolute top-0 left-0 w-full h-[1.5px] bg-gradient-to-r from-transparent via-amber-400 to-transparent shadow-[0_0_50px_rgba(251,191,36,0.7)] z-50 pointer-events-none" />
         
@@ -435,7 +435,7 @@ export default function LandingPage({ onNavigateAuth }) {
       </section>
 
       {/* ── Section 5: Find More ── */}
-      <section className="relative w-full min-h-[1080px] md:min-h-[90vh] bg-[#050a14] flex flex-col items-center justify-center py-16 md:py-20 z-50 border-t border-slate-900 overflow-hidden">
+      <section className="relative w-full min-h-[1080px] md:min-h-[90vh] bg-[#050a14] flex flex-col items-center justify-center py-16 md:py-20 z-50 border-t border-slate-900 overflow-hidden" style={{ contentVisibility: "auto", containIntrinsicSize: "1000px" }}>
         
         {/* Ambient Blobs */}
         <div className="absolute inset-0 z-0 pointer-events-none opacity-50 mix-blend-screen">
@@ -696,7 +696,7 @@ export default function LandingPage({ onNavigateAuth }) {
       </section>
 
       {/* ── Section 6: Need Help? ── */}
-      <section className="relative w-full min-h-[107vh] bg-white flex flex-col items-center justify-center py-32 z-50 overflow-hidden">
+      <section className="relative w-full min-h-[107vh] bg-white flex flex-col items-center justify-center py-32 z-50 overflow-hidden" style={{ contentVisibility: "auto", containIntrinsicSize: "1000px" }}>
         
         {/* Solid Section Divider */}
         <div className="absolute top-0 left-0 w-full h-[2px] bg-[#050a14] z-[70]" />

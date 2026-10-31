@@ -523,7 +523,7 @@ export default function MinigamePage() {
                   autoPlay 
                   playsInline 
                   webkit-playsinline="true"
-                  preload="auto"
+                  preload="metadata"
                   controlsList="nodownload"
                   className="w-full h-full object-cover transform-gpu will-change-transform" 
                   style={{ transform: "translate3d(0, 0, 0)", backfaceVisibility: "hidden" }}

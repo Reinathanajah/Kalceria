@@ -239,8 +239,9 @@ export function StartupSequenceOverlay({ showStartup, startupProgress, particles
                       <ContentImage
                         src="/kalcermanmap.webp"
                         alt="Kalcerman Map"
-                        width={2048}
-                        height={2048}
+                        width={400}
+                        height={400}
+                        sizes="(max-width: 768px) 240px, 275px"
                         className="relative w-[160px] h-[160px] xs:w-[175px] xs:h-[175px] sm:w-[240px] sm:h-[240px] md:w-[275px] md:h-[275px] object-contain filter drop-shadow-[0_0_35px_rgba(255,214,10,0.35)] mb-2 sm:mb-4 md:mb-6 z-10 -translate-x-10 xs:-translate-x-14 md:translate-x-0"
                         style={{
                           transformStyle: "preserve-3d",

@@ -28,8 +28,8 @@ export function JourneySlider({ images, logo, logoAlt, logoWidth = 260, logoHeig
               alt={logoAlt || "Partner"}
               width={logoWidth}
               height={logoHeight}
-              quality={95}
-              loading="eager"
+              quality={85}
+              loading="lazy"
               className={`max-w-[85%] max-h-[85%] w-auto h-auto object-contain filter ${isDsl ? "drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]" : "drop-shadow-md"} group-hover:scale-105 transition-transform duration-300`}
             />
           </div>
@@ -46,7 +46,7 @@ export function JourneySlider({ images, logo, logoAlt, logoWidth = 260, logoHeig
           <div className={`absolute inset-0 flex ${sliderClass}`} style={{ width: trackWidth }}>
             {images.map((src, i) => (
               <div key={i} className="relative h-full" style={{ width: itemWidth }}>
-                <Image src={src} alt="" fill sizes="(min-width: 768px) 400px, 280px" quality={90} className="object-cover object-center" />
+                <Image src={src} alt="" fill sizes="(min-width: 768px) 400px, 280px" quality={85} className="object-cover object-center" />
               </div>
             ))}
           </div>

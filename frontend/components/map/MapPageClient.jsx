@@ -833,10 +833,10 @@ export default function MapPage() {
           <Image
             src="/kalcermap_bottom.webp"
             alt="Kalceria Maps"
-            width={2048}
-            height={2048}
-            sizes="256px"
-            quality={90}
+            width={400}
+            height={400}
+            sizes="(max-width: 768px) 140px, 256px"
+            quality={80}
             loading="lazy"
             className="h-[125px] xs:h-[140px] md:h-[256px] w-auto object-contain opacity-95 filter drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]"
             draggable={false}
